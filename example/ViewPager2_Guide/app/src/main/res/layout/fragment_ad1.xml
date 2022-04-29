@@ -12,7 +12,7 @@
         android:layout_width="match_parent">
 
         <ImageView
-            android:id="@+id/iv_guide3"
+            android:id="@+id/iv_ad1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@+id/btn_skip3"

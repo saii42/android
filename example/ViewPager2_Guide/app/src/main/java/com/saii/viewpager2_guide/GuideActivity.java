@@ -6,7 +6,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 
-public class fragmentActivity extends AppCompatActivity {
+public class GuideActivity extends AppCompatActivity {
 
     private ViewPager2 mPager;
     private FragmentStateAdapter pagerAdapter;
@@ -15,7 +15,7 @@ public class fragmentActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_guidemain);
+        setContentView(R.layout.activity_guide);
 
         mPager = findViewById(R.id.vp_guide);
         pagerAdapter = new ViewPagerAdapter(this, num_page);
