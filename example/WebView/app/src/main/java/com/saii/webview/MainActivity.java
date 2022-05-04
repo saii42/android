@@ -2,12 +2,14 @@ package com.saii.webview;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private WebView mWebView;
+    public WebView mWebView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,10 +21,18 @@ public class MainActivity extends AppCompatActivity {
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-        mWebView.setWebViewClient(new WebViewClient(){
-        });
-        //mWebView.loadUrl("https://saii42.tistory.com/97");
+        mWebView.addJavascriptInterface(new Object() {
+            @JavascriptInterface
+            public String showToast(String keyword) {
+                Toast.makeText(MainActivity.this, keyword + " 키워드 입력" , Toast.LENGTH_LONG).show();
+                String param1 = keyword + " return android - Saii";
+                return param1;
+            }
+        }, "Saii");
         mWebView.loadUrl("file:///android_asset/index.html");
 
     }
 }
+
+
+

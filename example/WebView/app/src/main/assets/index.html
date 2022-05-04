@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>WebView Example</title>
+    <title>Saii WebView Example</title>
 </head>
 
-<script type="text/javascript" src="webview-example.js"></script>
-
-<script>
-
-
+<script type="text/javascript">
+        function showAndroidToast(toast) {
+           var word = document.createElement('div');
+           word.textContent = Saii.showToast(toast);
+          document.body.append(word);
+        }
 </script>
 
 <body>
-<h1 id="webview-example">WebView - Example</h1>
+<h1 id="Saii Webview-Example">Saii WebView - Example</h1>
 
-<form> <input id="data"type="text" placeholder="data"> <button type="submit">확인</button> </form>
+    <input id="keyword" type="text" placeholder="keyword">
+    <br>
+    <button type="submit" onClick="showAndroidToast(keyword.value)">Submit</button>
 
 </body>
 </html>
